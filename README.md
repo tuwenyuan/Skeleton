@@ -1,6 +1,8 @@
 # Skeleton
 android 项目基本框架搭建 新版
 
+![gif图](https://github.com/tuwenyuan/Skeleton/blob/master/git/a1.gif)
+
     @Override
     public void initListener() {
         binding.tvLoad.setOnClickListener(new View.OnClickListener() {
@@ -26,14 +28,14 @@ android 项目基本框架搭建 新版
                     @Override
                     public void run() {
                         int i = rd.nextInt(10);
-                        if(i>0 && i<=3){
+                        if(i>0 && i<=3){//假设1~3网络数据请求成功
                             Toast.makeText(MainActivity.this,ugouCountBean.toString(),Toast.LENGTH_SHORT).show();
                             hideLoding();
-                        }else if(i>3 && i<=6){
+                        }else if(i>3 && i<=6){//4~6服务器报异常
                             //throw new CustomDataException("模拟异常~~");
                             hideLoding();
                             showErrorView();
-                        }else{
+                        }else{//其它为服务器返回空数据
                             hideLoding();
                             showNoDataView();
                         }
@@ -48,3 +50,5 @@ android 项目基本框架搭建 新版
             }
         });
     }
+
+####程序员只需要在适当的位置 该显示什么视图就显示什么视图 不需要考虑其它（如 加载失败重新加载...） 程序员精力只要放在数据成功返回处理好数据怎么显示就可以了
