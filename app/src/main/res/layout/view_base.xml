@@ -5,8 +5,37 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
         <com.ican.skeleton.view.TitleView
+            android:id="@+id/title"
             android:layout_width="match_parent"
             android:layout_height="48dp"
+            android:visibility="visible"/>
+        <FrameLayout
+            android:id="@+id/fl_conetnt"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/title"/>
+        <include android:id="@+id/loading"
+            layout="@layout/view_loading"/>
+        <com.ican.skeleton.view.NoNetworkView
+            android:id="@+id/v_no_net"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#ffffff"
+            android:layout_below="@id/title"
+            android:visibility="gone"/>
+        <com.ican.skeleton.view.NoDataView
+            android:id="@+id/v_no_data"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#ffffff"
+            android:layout_below="@id/title"
+            android:visibility="gone"/>
+        <com.ican.skeleton.view.ErrorView
+            android:id="@+id/v_error"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#ffffff"
+            android:layout_below="@id/title"
             android:visibility="gone"/>
     </RelativeLayout>
 </layout>

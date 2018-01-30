@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android" >
+    <com.ican.skeleton.view.RlNoTouchView
+        android:id="@+id/rl_n_t_load"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+        <View
+            android:id="@+id/v"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="#01000000"/>
+        <RelativeLayout
+            android:id="@+id/rl_loading"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/v">
+            <ProgressBar
+                android:id="@+id/loading_bar"
+                android:layout_centerInParent="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <!--<ProgressBar
+                android:layout_centerInParent="true"
+                android:indeterminateDrawable="@drawable/progress_small"
+                android:indeterminateDuration="700"
+                style="@style/Widget.AppCompat.ProgressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>-->
+        </RelativeLayout>
+    </com.ican.skeleton.view.RlNoTouchView>
+</layout>

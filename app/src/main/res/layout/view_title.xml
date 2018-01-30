@@ -68,5 +68,5 @@
         android:id="@+id/v_title_line"
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="@color/diverline"/>
+        android:background="#ebebeb"/>
 </LinearLayout>
