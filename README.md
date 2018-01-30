@@ -20,8 +20,8 @@ android 项目基本框架搭建 新版
 
     public void loadNetData1(){
         final Random rd = new Random();
-        showLoading(true);
-        requestData(apiService.getPageData(), new NetRequestWork.OnRequestListener<UgouCountBean>() {
+        showLoading(true);//true代表加载中的视图背景是透明的
+        requestData(apiService.getPageData(), new NetRequestWork.OnRequestListener<UgouCountBean>() {
             @Override
             public void onRecvDataBack(final UgouCountBean ugouCountBean) {
                 BaseApplication.mhandler.postDelayed(new Runnable() {
