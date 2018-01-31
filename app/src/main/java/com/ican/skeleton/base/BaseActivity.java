@@ -12,6 +12,7 @@ import com.ican.skeleton.databinding.ViewBaseBinding;
 import com.ican.skeleton.entity.IRequestNetData;
 import com.ican.skeleton.entity.OnRetryClickListner;
 import com.ican.skeleton.entity.RequestStatus;
+import com.ican.skeleton.manager.SkeletonController;
 import com.ican.skeleton.net.APIManagerService;
 import com.ican.skeleton.net.HostType;
 import com.ican.skeleton.net.NetRequestWork;
@@ -33,10 +34,12 @@ public abstract class BaseActivity extends AppCompatActivity {
     public ViewBaseBinding rtBinding;
     public RequestStatus status = RequestStatus.none;
     private IRequestNetData requestNetData;
+    public SkeletonController controller;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        controller = SkeletonController.getInstance();
         rtBinding = DataBindingUtil.inflate(getLayoutInflater(), R.layout.view_base,null,false);
         setContentView(rtBinding.getRoot());
         rtBinding.flConetnt.addView(getContentView());

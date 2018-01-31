@@ -58,17 +58,11 @@ public class MainActivity extends BaseActivity {
                 });
             }
         });
-        binding.btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(MainActivity.this,"点击了",Toast.LENGTH_SHORT).show();
-            }
-        });
     }
 
     public void loadNetData1(){
         final Random rd = new Random();
-        showLoading(true);
+        showLoading(false);//true代表加载中的视图背景是透明的
         requestData(apiService.getPageData(), new NetRequestWork.OnRequestListener<UgouCountBean>() {
             @Override
             public void onRecvDataBack(final UgouCountBean ugouCountBean) {
@@ -76,14 +70,14 @@ public class MainActivity extends BaseActivity {
                     @Override
                     public void run() {
                         int i = rd.nextInt(10);
-                        if(i>0 && i<=3){
+                        if(i>0 && i<=3){////假设1~3网络数据请求成功
                             Toast.makeText(MainActivity.this,ugouCountBean.toString(),Toast.LENGTH_SHORT).show();
                             hideLoding();
-                        }else if(i>3 && i<=6){
+                        }else if(i>3 && i<=6){//4~6服务器报异常
                             //throw new CustomDataException("模拟异常~~");
                             hideLoding();
                             showErrorView();
-                        }else{
+                        }else{//其它为服务器返回空数据
                             hideLoding();
                             showNoDataView();
                         }
@@ -99,3 +93,6 @@ public class MainActivity extends BaseActivity {
         });
     }
 }
+
+
+

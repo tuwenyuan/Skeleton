@@ -14,6 +14,7 @@ import com.ican.skeleton.databinding.ViewBaseBinding;
 import com.ican.skeleton.entity.IRequestNetData;
 import com.ican.skeleton.entity.OnRetryClickListner;
 import com.ican.skeleton.entity.RequestStatus;
+import com.ican.skeleton.manager.SkeletonController;
 import com.ican.skeleton.net.APIManagerService;
 import com.ican.skeleton.net.NetRequestWork;
 import com.ican.skeleton.utils.NetworkUtil;
@@ -32,12 +33,14 @@ public abstract class BaseFragment extends Fragment {
     private ViewBaseBinding rtBinding;
     public RequestStatus status = RequestStatus.none;
     private IRequestNetData requestNetData;
+    public SkeletonController controller;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         activity = (BaseActivity) getActivity();
         apiService = activity.apiService;
+        controller = activity.controller;
     }
 
     @Nullable
