@@ -73,6 +73,7 @@ public class MainActivity extends BaseActivity {
                         if(i>0 && i<=3){////假设1~3网络数据请求成功
                             Toast.makeText(MainActivity.this,ugouCountBean.toString(),Toast.LENGTH_SHORT).show();
                             hideLoding();
+                            rtBinding.flConetnt.setVisibility(View.VISIBLE);
                         }else if(i>3 && i<=6){//4~6服务器报异常
                             //throw new CustomDataException("模拟异常~~");
                             hideLoding();
