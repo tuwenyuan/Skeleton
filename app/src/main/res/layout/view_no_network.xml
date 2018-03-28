@@ -1,30 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
-    <LinearLayout
+    <RelativeLayout
         android:id="@+id/no_network_root"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:orientation="vertical">
-        <ImageView
-            android:src="@mipmap/no_network"
+        android:layout_height="match_parent">
+        <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-        <TextView
-            android:layout_marginTop="15dp"
-            android:textSize="14sp"
-            android:textColor="#999999"
-            android:text="网络似乎不太给力啊"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-        <Button
-            android:id="@+id/btn_retry"
-            android:textColor="#ffffff"
-            android:text="重新加载"
-            android:layout_marginTop="15dp"
-            android:background="#ea5504"
-            android:layout_width="100dp"
-            android:layout_height="30dp"/>
-    </LinearLayout>
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_centerInParent="true"
+            android:gravity="center_horizontal">
+            <ImageView
+                android:src="@mipmap/icon_network"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:layout_marginTop="15dp"
+                android:textSize="14sp"
+                android:textColor="#999999"
+                android:text="很抱歉,网络连接失败"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="请检查您的网络设置"
+                    android:textSize="14sp"
+                    android:textColor="#999999"/>
+                <TextView
+                    android:id="@+id/tv_retry"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" 再重试"
+                    android:textSize="14sp"
+                    android:paddingTop="10dp"
+                    android:textColor="#0066cb"/>
+            </LinearLayout>
+        </LinearLayout>
+
+    </RelativeLayout>
 </layout>
 

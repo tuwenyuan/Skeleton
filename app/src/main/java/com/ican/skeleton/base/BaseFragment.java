@@ -63,6 +63,9 @@ public abstract class BaseFragment extends Fragment {
         rtBinding.vError.setVisibility(View.GONE);
         rtBinding.vNoData.setVisibility(View.GONE);
         rtBinding.vNoNet.setVisibility(View.GONE);
+        activity.rtBinding.vError.setVisibility(View.GONE);
+        activity.rtBinding.vNoData.setVisibility(View.GONE);
+        activity.rtBinding.vNoNet.setVisibility(View.GONE);
         if(NetworkUtil.isAvailable(activity)) {
             activity.netRequestWork.requestData(observable,listener);
         }else{

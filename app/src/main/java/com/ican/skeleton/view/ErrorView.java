@@ -44,7 +44,7 @@ public class ErrorView extends LinearLayout {
     }
 
     private void initListner() {
-        mNoDataViewBinding.btnRetry.setOnClickListener(new OnClickListener() {
+        mNoDataViewBinding.tvRetry.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
                 if(listner!=null){
